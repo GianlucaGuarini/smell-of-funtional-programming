@@ -2,6 +2,12 @@ export function randomIndexInArray(array) {
   return Math.floor(Math.random() * array.length)
 }
 
+export function sleep(delay) {
+  return new Promise(resolve => {
+    setTimeout(resolve, delay)
+  })
+}
+
 export function take(amount, generator) {
   const result = []
   const gen = generator.next ? generator : generator()
@@ -29,6 +35,10 @@ export function capitalize(string) {
 
 export function printPerson({ first_name, last_name, city }) {
   return `🎉 ${capitalize(first_name)} ${capitalize(last_name)} from ${city} 🎉`
+}
+
+export function printWinner(message, generator) {
+  console.log(message, printPerson(generator.next().value))
 }
 
 export function printJSON(json) {

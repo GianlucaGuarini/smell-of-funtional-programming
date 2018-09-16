@@ -1,13 +1,12 @@
 /* eslint-disable no-constant-condition */
 import developers from '../../data/devs.json'
-import { randomIndexInArray, printPerson, runGenerator } from '../../shared'
+import { randomIndexInArray, printWinner, runGenerator, sleep } from '../../shared'
 
 const winnersGenerator = function *(developersList, amount) {
   const pontentialWinners = [...developersList]
 
   while (true) {
-    if (amount === 0 || !pontentialWinners.length) return
-
+    if (amount === 0) return
     const winnerIndex = randomIndexInArray(pontentialWinners)
     const [winner] = pontentialWinners.splice(winnerIndex, 1)
 
@@ -19,12 +18,14 @@ const winnersGenerator = function *(developersList, amount) {
 
 const devsWinnerGenerator = winnersGenerator(developers, 3)
 
-console.log('The first winner is', printPerson(devsWinnerGenerator.next().value))
+async function main() {
+  printWinner('The first winner is', devsWinnerGenerator)
+  await sleep(2000)
+  printWinner('The second winner is', devsWinnerGenerator)
+  await sleep(2000)
+  printWinner('..and finally the last winner is', devsWinnerGenerator)
+}
 
-setTimeout(() => {
-  console.log('The second winner is', printPerson(devsWinnerGenerator.next().value))
-}, 2000)
+main()
 
-setTimeout(() => {
-  console.log('The third winner is', printPerson(devsWinnerGenerator.next().value))
-}, 4000)
+
