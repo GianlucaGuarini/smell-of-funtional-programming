@@ -11,7 +11,6 @@
   "license": "MIT",
   "devDependencies": {
     "@gianlucaguarini/eslint-config": "^2.0.0",
-    "allora": "^1.0.0",
     "curri": "^1.0.0",
     "reify": "^0.17.3"
   }

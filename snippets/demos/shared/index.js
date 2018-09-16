@@ -1,15 +1,3 @@
-import allora from 'allora'
-
-const timeout = allora(setTimeout)
-
-export async function saveUser(user) {
-  return await timeout(1, user)
-}
-
-export function compose(...fns) {
-  return initialValue => fns.reduce((acc, fn) => fn(acc), initialValue)
-}
-
 export function randomIndexInArray(array) {
   return Math.floor(Math.random() * array.length)
 }
