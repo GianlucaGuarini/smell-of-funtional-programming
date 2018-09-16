@@ -1,0 +1,7 @@
+
+extends: '@gianlucaguarini/eslint-config'
+parserOptions:
+  ecmaVersion: 8
+  sourceType: 'module'
+  ecmaFeatures:
+    experimentalObjectRestSpread: true
