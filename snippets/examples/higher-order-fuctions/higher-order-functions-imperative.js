@@ -1,5 +1,5 @@
-import developers from '../data/devs.json'
-import { printJSON, printInfo } from '../shared'
+import developers from '../../data/devs.json'
+import { printJSON, printInfo } from '../../shared'
 
 function getDevsFromZurich() {
   var developersList = []

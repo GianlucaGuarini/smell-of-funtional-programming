@@ -1,5 +1,5 @@
 /* eslint-disable no-constant-condition */
-import { take, printInfo, printJSON } from '../shared'
+import { take, printInfo, printJSON } from '../../shared'
 import curry from 'curri'
 
 const oddNumbersGenerator = function *(start = 0) {

@@ -1,6 +1,6 @@
 /* eslint-disable no-constant-condition */
-import developers from '../data/devs.json'
-import { randomIndexInArray, printPerson, runGenerator } from '../shared'
+import developers from '../../data/devs.json'
+import { randomIndexInArray, printPerson, runGenerator } from '../../shared'
 
 const winnersGenerator = function *(developersList, amount) {
   const pontentialWinners = [...developersList]

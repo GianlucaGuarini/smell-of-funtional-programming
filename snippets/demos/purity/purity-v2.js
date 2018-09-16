@@ -1,14 +1,19 @@
-import developers from '../data/devs.json'
+import developers from '../../data/devs.json'
+
+const DEVELOPER_MODEL = Object.freeze({
+  doesOpensource: false,
+  doOpensource() {
+    this.doOpensource = true
+  },
+  collection: []
+})
 
 function createDevelopersModels(developersList) {
   return developersList.map(developer => {
     return {
       ...developer,
-      doesOpensource: false,
-      collection: developersList,
-      doOpensource() {
-        this.doOpensource = true
-      }
+      ...DEVELOPER_MODEL,
+      collection: developersList
     }
   })
 }
