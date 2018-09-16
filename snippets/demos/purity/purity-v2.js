@@ -1,8 +1,7 @@
 import developers from '../data/devs.json'
 
-function createDeveloperModels(developersList) {
+function createDevelopersModels(developersList) {
   return developersList.map(developer => {
-    // create a new object leaving the developer data untouched
     return {
       ...developer,
       doesOpensource: false,
@@ -14,5 +13,5 @@ function createDeveloperModels(developersList) {
   })
 }
 
-const developerModels = createDeveloperModels(developers)
+const developerModels = createDevelopersModels(developers)
 console.log(JSON.stringify(developerModels, null, 2))

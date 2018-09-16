@@ -14,6 +14,4 @@ function createDeveloperModels(developersList) {
 
 
 const developerModels = createDeveloperModels(developers)
-
-// print the DeveloperModels
 console.log(JSON.stringify(developerModels, null, 2))
