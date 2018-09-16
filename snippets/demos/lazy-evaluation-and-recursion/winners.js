@@ -7,6 +7,7 @@ const winnersGenerator = function *(developersList, amount) {
 
   while (true) {
     if (amount === 0) return
+
     const winnerIndex = randomIndexInArray(pontentialWinners)
     const [winner] = pontentialWinners.splice(winnerIndex, 1)
 
@@ -16,16 +17,12 @@ const winnersGenerator = function *(developersList, amount) {
   }
 }
 
-const devsWinnerGenerator = winnersGenerator(developers, 3)
+;(async function main() {
+  const devsWinnerGenerator = winnersGenerator(developers, 3)
 
-async function main() {
-  printWinner('The first winner is', devsWinnerGenerator)
+  printWinner('The first winner is', devsWinnerGenerator.next())
   await sleep(2000)
-  printWinner('The second winner is', devsWinnerGenerator)
+  printWinner('The second winner is', devsWinnerGenerator.next())
   await sleep(2000)
-  printWinner('..and finally the last winner is', devsWinnerGenerator)
-}
-
-main()
-
-
+  printWinner('..and finally the last winner is', devsWinnerGenerator.next())
+})()
