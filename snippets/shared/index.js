@@ -37,6 +37,10 @@ export function printPerson({ first_name, last_name, city }) {
   return `🎉 ${capitalize(first_name)} ${capitalize(last_name)} from ${city} 🎉`
 }
 
+export function printFriend({ first_name, last_name, city }) {
+  return ` 🤟🏻 ${capitalize(first_name)} ${capitalize(last_name)} from ${city}`
+}
+
 export function printWinner(message, generatorResult) {
   console.log(message, printPerson(generatorResult.value))
 }
